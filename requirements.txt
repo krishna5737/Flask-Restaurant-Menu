@@ -1,0 +1,10 @@
+Flask==0.12.2
+Flask-Cors==3.0.3
+gunicorn==19.8.1
+py==1.5.2
+python-dateutil==2.6.1
+spyder==3.2.6
+SQLAlchemy==1.2.7
+tables==3.4.2
+unicodecsv==0.14.1
+

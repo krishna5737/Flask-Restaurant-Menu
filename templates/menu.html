@@ -1,0 +1,38 @@
+<html>
+  <head>
+	   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+  <body>
+  	<div class = 'pane'>
+  		<div class = 'header'>
+  		<h1>{{ restaurant.name }}'s Menu</h1>
+      <h2><a href= " {{ url_for('newMenuItem',restaurant_id=restaurant_id)}} ">  Add new item to your Restaurant</a> </h2>
+  	</div>
+
+
+
+
+
+		{% for i in items %}
+      <div class = 'nameAndPrice'>
+		      <span class = 'name'><p>{{i.name}}</p></span>
+		      <span class = 'price'>
+            <p>{{i.price}} </p>
+	         </span>
+	    </div>
+	    <div class = 'description'>
+		      <p>{{i.description}}</p>
+	    </div>
+
+	    <div class = "editdeletepane">
+	       <p><a href= " {{ url_for('editMenuItem',restaurant_id=restaurant_id,menu_id=i.id)}} ">  Edit</a> </p>
+	       <p><a href= " {{ url_for('deleteMenuItem',restaurant_id=restaurant_id,menu_id=i.id)}} ">  Delete</a> </p>
+	    </div>
+		{% endfor %}
+
+    </div>
+    </div>
+  </body>
+
+</html>
